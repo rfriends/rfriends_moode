@@ -1,0 +1,11 @@
+# for MoOde 2024/09/16
+#SHELL=/bin/sh
+#PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+BASE_DIR=/home/rfriendsuser/rfriends3
+# m h  dom mon dow   command
+10  5 * * * sh $BASE_DIR/script/ex_rfriends.sh
+10 17 * * * sh $BASE_DIR/script/ex_rfriends.sh
+#
+# library update
+10  6 * * * /usr/bin/mpc update
+10 18 * * * /usr/bin/mpc update

@@ -14,7 +14,7 @@
 # 1.9 2024/10/29 add webdav
 # 2.0 2024/12/14 github
 # -----------------------------------------
-ver=1.9
+ver=2.0
 echo
 echo rfriends3 for moode $ver
 echo

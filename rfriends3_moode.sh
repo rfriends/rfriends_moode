@@ -49,20 +49,20 @@ git clone https://github.com/rfriends/rfriends_ubuntu.git
 cd rfriends_ubuntu
 sh ubuntu_install.sh 2>&1 | tee ubuntu_install.log
 # -----------------------------------------
-echo
-echo configure samba for volumio moode player
-echo
-cd $dir
-cat /etc/samba/smb.conf | grep 'force user = '
-ret=$?
-
-if [ $ret = 1 ]; then
-    sudo cp -p /etc/samba/smb.conf /etc/samba/smb.conf.org
-    sed "/Internal Storage/a force user = $user" /etc/samba/smb.conf > $dir/smb.conf
-    sudo cp -p $dir/smb.conf /etc/samba/smb.conf
-else
-    echo 'smb.conf already editted.'
-fi
+#echo
+#echo configure samba for volumio moode player
+#echo
+#cd $dir
+#cat /etc/samba/smb.conf | grep 'force user = '
+#ret=$?
+#
+#if [ $ret = 1 ]; then
+#    sudo cp -p /etc/samba/smb.conf /etc/samba/smb.conf.org
+#    sed "/Internal Storage/a force user = $user" /etc/samba/smb.conf > $dir/smb.conf
+#    sudo cp -p $dir/smb.conf /etc/samba/smb.conf
+#else
+#    echo 'smb.conf already editted.'
+#fi
 # -----------------------------------------
 cd $dir
 echo

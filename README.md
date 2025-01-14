@@ -1,4 +1,6 @@
 rfriends_moodeはmoode player環境でrfriends3を動作させるスクリプトです。  
+録音ディレクトリを/mnt/SDCARD/usr2に設定するので、"update library"を行えば  
+録音した番組をmoode playerで聴くことができます。  
   
 cd ~/  
 sudo apt install git  

@@ -31,28 +31,21 @@ else
   homedir=$HOME
 fi
 # -----------------------------------------
-echo
-echo rfriends3,lighttpdのインストール
-echo
-#
-sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install git
-
-optlighttpd="on"
-optsamba="off"
-export optlighttpd
-export optsamba
-#
-cd $homedir
-rm -rf rfriends_ubuntu
-git clone https://github.com/rfriends/rfriends_ubuntu.git
+cd ~/
+rm -rf rfriends3_core
+git clone https://github.com/rfriends/rfriends3_core.git
 if [ $? != 0 ]; then
   echo クローンに失敗しました。
   echo 少し時間をおいて再度実行してください。
   exit 1
 fi
-cd rfriends_ubuntu
-sh ubuntu_install.sh 2>&1 | tee ubuntu_install.log
+cd rfriends3_core
+
+export distro="ubuntu"
+export optlighttpd="on"
+
+sudo apt-get update && sudo apt-get upgrade -y
+sh common.sh 2>&1 | tee common.log
 # -----------------------------------------
 #echo
 #echo configure samba for volumio moode player
@@ -91,16 +84,13 @@ echo
 sudo chmod 775 /mnt/SDCARD
 #
 sudo mkdir -p /mnt/SDCARD/usr2/
-sudo chown $user /mnt/SDCARD/usr2/
-sudo chgrp $user /mnt/SDCARD/usr2/
+sudo chown $user:$user /mnt/SDCARD/usr2/
 #
 sudo mkdir -p /mnt/SDCARD/trans/
-sudo chown $user /mnt/SDCARD/trans/
-sudo chgrp $user /mnt/SDCARD/trans/
+sudo chown $user:$user /mnt/SDCARD/trans/
 #
 mkdir -p $homedir/tmp/
-sudo chown $user $homedir/tmp/
-sudo chgrp $user $homedir/tmp/
+sudo chown $user:$user $homedir/tmp/
 sudo chmod 777   $homedir/tmp/
 
 cat <<EOF > $homedir/rfriends3/config/usrdir.ini

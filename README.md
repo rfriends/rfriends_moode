@@ -10,5 +10,5 @@ cd rfriends_moode
 sh rfriends_moode.sh  
   
 インストール方法は以下を参照して下さい。  
-https://github.com/rfriends/rfriends/blob/gh-pages/distro/moode.md
+https://rfriends.github.io/rfriends/distro/moode.html
   

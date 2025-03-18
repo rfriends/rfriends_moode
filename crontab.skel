@@ -1,4 +1,4 @@
-# for MoOde 2024/09/16
+# for MoOde 2025/03/19
 #SHELL=/bin/sh
 #PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 BASE_DIR=/home/rfriendsuser/rfriends3
@@ -9,3 +9,5 @@ BASE_DIR=/home/rfriendsuser/rfriends3
 # library update
 10  6 * * * /usr/bin/mpc update
 10 18 * * * /usr/bin/mpc update
+#
+

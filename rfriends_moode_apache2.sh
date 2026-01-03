@@ -1,23 +1,12 @@
 #!/bin/bash
 # -----------------------------------------
-# install rfriends for vmoode player
+# install rfriends for moode player with apache2
 # -----------------------------------------
-# 1.0 2024/08/22
-# 1.1 2024/08/25 dir
-# 1.2 2024/08/25 usr2 smb.conf,radiru
-# 1.3 2024/08/28 vim,pulseaudio
-# 1.4 2024/09/02 pulseaudio
-# 1.5 2024/09/03 crontab
-# 1.6 2024/09/03 fstab
-# 1.7 2024/09/03 seekable
-# 1.8 2024/09/20 pulseaudio
-# 1.9 2024/10/29 add webdav
-# 2.0 2024/12/14 github
-# 2.1 2025/01/03 fix
+# 2.2 2026/01/03 new
 # -----------------------------------------
-ver=2.1
+ver=2.2
 echo
-echo rfriends3 for moode player $ver
+echo rfriends3 for moode player with apache2 $ver
 echo
 # -----------------------------------------
 user=`whoami`
@@ -41,8 +30,18 @@ if [ $? != 0 ]; then
 fi
 cd rfriends3_core
 
-export distro="ubuntu"
-export optlighttpd="on"
+export distro="debian"
+export optlighttpd="off"
+export optapache2="on"
+export optsamba="on"
+export optvimrc="on"
+
+export lighttpd="lighttpd"
+export apache2="apache2"
+export apache_conf_dir="/etc/apache2"
+export smbd="smbd"
+export atd="atd"
+export cron="cron"
 
 sudo apt-get update && sudo apt-get upgrade -y
 sh common.sh 2>&1 | tee common.log

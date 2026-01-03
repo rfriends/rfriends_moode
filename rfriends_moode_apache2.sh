@@ -6,7 +6,7 @@
 # -----------------------------------------
 ver=2.2
 echo
-echo rfriends3 for moode player $ver (apache2)
+echo rfriends3 for moode player $ver apache2
 echo
 # -----------------------------------------
 user=`whoami`

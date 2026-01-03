@@ -33,7 +33,7 @@ cd rfriends3_core
 export distro="debian"
 export optlighttpd="off"
 export optapache2="on"
-export optsamba="on"
+export optsamba="off"
 export optvimrc="on"
 
 export lighttpd="lighttpd"
@@ -44,6 +44,8 @@ export atd="atd"
 export cron="cron"
 
 sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get install apache2 php php-fpm libapache2-mod-php
+
 sh common.sh 2>&1 | tee common.log
 # -----------------------------------------
 #echo

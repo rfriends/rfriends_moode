@@ -3,8 +3,9 @@
 # install rfriends for moode player with apache2
 # -----------------------------------------
 # 2.2 2026/01/03 new
+# 2.3 2026/01/12 OSDISK
 # -----------------------------------------
-ver=2.2
+ver=2.3
 echo
 echo rfriends3 for moode player with apache2 $ver
 echo
@@ -82,20 +83,21 @@ cd $dir
 echo
 echo configure usrdir
 echo
-sudo chmod 775 /mnt/SDCARD
+#sudo chmod 775 /mnt/SDCARD
+# moode10 SDCARD -> OSDISK
 #
-sudo mkdir -p /mnt/SDCARD/usr2/
-sudo chown $user:$user /mnt/SDCARD/usr2/
+sudo mkdir -p /mnt/OSDISK/usr2/
+sudo chown $user:$user /mnt/OSDISK/usr2/
 #
-sudo mkdir -p /mnt/SDCARD/trans/
-sudo chown $user:$user /mnt/SDCARD/trans/
+sudo mkdir -p /mnt/OSDISK/trans/
+sudo chown $user:$user /mnt/OSDISK/trans/
 #
 mkdir -p $homedir/tmp/
 sudo chown $user:$user $homedir/tmp/
 sudo chmod 777   $homedir/tmp/
 
 cat <<EOF > $homedir/rfriends3/config/usrdir.ini
-usrdir = "/mnt/SDCARD/usr2/"
+usrdir = "/mnt/OSDISK/usr2/"
 tmpdir = "$homedir/tmp/"
 EOF
 #
